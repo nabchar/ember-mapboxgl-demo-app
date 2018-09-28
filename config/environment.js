@@ -12,7 +12,7 @@ module.exports = function(environment) {
       accessToken: process.env.ACCESS_TOKEN,
       map: {
         style: 'mapbox://styles/mapbox/basic-v9',
-        zoom: 8,
+        zoom: 9,
         center: [ -87.4985112, 41.8832547 ]
       },
     },
