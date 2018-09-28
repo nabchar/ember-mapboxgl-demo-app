@@ -1,0 +1,5 @@
+{{#mapbox-gl class='map-container' initOptions=initOptions as |map|}}
+  {{#map.source options=bikeLaneSourceOptions as |source|}}
+    {{source.layer layer=bikeLaneStyles}}
+  {{/map.source}}
+{{/mapbox-gl}}
