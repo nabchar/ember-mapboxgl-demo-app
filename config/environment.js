@@ -1,4 +1,6 @@
 'use strict';
+require('dotenv').config();
+
 
 module.exports = function(environment) {
   let ENV = {
@@ -6,6 +8,14 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    'mapbox-gl': {
+      accessToken: process.env.ACCESS_TOKEN,
+      map: {
+        style: 'mapbox://styles/mapbox/basic-v9',
+        zoom: 8,
+        center: [ -87.4985112, 41.8832547 ]
+      },
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
