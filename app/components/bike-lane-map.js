@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed } from '@ember-object';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   init() {
@@ -9,9 +9,23 @@ export default Component.extend({
     };
     this.bikeLaneStyles = {
       type: 'line',
-      path: {
-        'line-color': '#007cbf',
-        'line-width': 10,
+      paint: {
+        'line-color': {
+          property: 'bikeroute',
+          type: 'categorical',
+          stops: [
+            ['ACCESS PATH', '#e41a1c'],
+            ['EXISTING BUFFERED BIKE LANE', '#f781bf'],
+            ['EXISTING CYCLE TRACK', '#4daf4a'],
+            ['EXISTING SHARED-LANE', '#984ea3'],
+            ['EXISTING BIKE LANE', '#ff7f00'],
+            ['EXISTING OFF-STREET TRAIL', '#ffff33'],
+            ['EXISTING NEIGHBORHOOD GREENWAY', '#a65628'],
+            ['RECOMMENDED BIKE ROUTE', '#377eb8'],
+          ],
+          default: '#66c2a5',
+        },
+        'line-width': 2,
       },
     };
     this.bikeLaneSourceOptions = computed('data', function() {

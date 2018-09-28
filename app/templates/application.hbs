@@ -1,13 +1,1 @@
-{{log "MODEL" model}}
-
-{{#mapbox-gl class="map-container" initOptions=(hash pitch=30) as |map|}}
-  {{#map.source options=(hash type="geojson" data=model) as |source|}}
-    {{source.layer
-      layer=(hash
-        type="line"
-        paint=(hash line-color="#007cbf" line-width=3))
-    }}
-  {{/map.source}}
-{{/mapbox-gl}}
-
-{{outlet}}
+{{bike-lane-map data=model}}
